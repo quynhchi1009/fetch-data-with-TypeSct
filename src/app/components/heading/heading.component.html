@@ -1,0 +1,25 @@
+<app-loader *ngIf="loading"></app-loader>
+
+<div class="sliderContainer">
+    <div *ngFor="let item of stage">
+        <div class="slider" style="background: url({{item.image.srcSet[0].path}});">
+            <div class="text-content">
+                <div class="text-category">
+                    {{item.category}}
+                </div>
+                <div class="parting-line"></div>
+                <h2 class="text-heading text-uppercase">
+                    {{item.headline}}
+                </h2>
+                <div *ngIf="item.link" class="text-description">
+                    {{item.link.text}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dots" >
+        <div style="text-align:center" *ngFor="let item of stage">
+            <span class="dot"></span>
+        </div>
+    </div>
+</div>

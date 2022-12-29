@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: myFirstFont;
+    src: url('../src/assets/fonts/rs-hausschrift/UtilityWebPro-Light.eot') format('truetype');
+}
+
+* {
+    font-family: myFirstFont;
+}

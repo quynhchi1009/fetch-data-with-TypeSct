@@ -1,0 +1,29 @@
+<app-loader *ngIf="loading"></app-loader>
+<div id="content">
+    <div class="content-section ">
+        <h2 class="section-heading text-uppercase">{{chosenCategory}}</h2>
+
+        <ul class="filter" style="list-style-type: none;">
+            <li style="display: inline-block;" *ngFor="let item of category" >
+                <input class="hidden" type="checkbox" id={{item}} 
+                value="{{item}}" name="{{item}}"/>
+                <label class="btn filter-btn" for="{{item}}" (click)="selectionChanged(item)">{{item}}</label>
+            </li>
+        </ul>
+
+        <div class="row places-list">
+            <div *ngFor="let item of filteredTeaser" class="col col-lg-3 col-md-4 col-sm-6 mt-16">
+                <img src={{item.image.srcSet[0].path}} alt={{item.image.altText}} class="teaser-img">
+                <div class="teaser-body">
+                    <h3 class="teaser-heading">{{item.headline}}</h3>
+                    <p class="teaser-desc">{{item.text}}</p>
+                    <a class="teaser-link" href={{item.link.href}} target={{item.link.target}}
+                        rel="noopener noreferrer">
+                        <i class="fa-solid fa-chevron-right"></i>
+                        {{item.link.text}}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
